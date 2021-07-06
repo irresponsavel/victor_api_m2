@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/create', async (req, res) => {
-    const { nome, login, senha, email, senha} = req.body;
+    const { nome, login, senha, email, telefone} = req.body;
 
     if (!nome || !login || !senha || !email || !telefone)
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
