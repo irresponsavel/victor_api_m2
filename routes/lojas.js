@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth');
 const config = require('../config/config');
-const lojas = require('../models/loja');
+const lojas = require('../models/Loja');
 
 router.get('/', async (req, res) => {
     try {

@@ -11,7 +11,7 @@ const options = {
     useFindAndModify: false
 };
 
-mongoose.connect('##DEFINIR##',options);
+mongoose.connect('mongodb+srv://victor:123@cluster0.2cfgi.mongodb.net/dbM2?retryWrites=true&w=majority',options);
 
 mongoose.set('useCreateIndex',true);
 
