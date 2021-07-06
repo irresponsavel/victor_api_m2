@@ -41,9 +41,9 @@ router.get('/', async (req, res) => {
 
 
 router.post('/create', async (req, res) => {
-    const { nome, login, senha} = req.body;
+    const { nome, login, senha, email, senha} = req.body;
 
-    if (!nome || !login || !senha)
+    if (!nome || !login || !senha || !email || !telefone)
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
     try {
         if (await usuarios.findOne({ login } ))
@@ -60,9 +60,9 @@ router.post('/create', async (req, res) => {
 });
 
 router.put('/update/:id', async (req, res) => {
-    const { nome, login, senha} = req.body;
+    const { nome, login, senha, email, telefone} = req.body;
 
-    if (!nome || !login || !senha)
+    if (!nome || !login || !senha || !email || !telefone)
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
     try {
         if (await usuarios.findOne({ login }))

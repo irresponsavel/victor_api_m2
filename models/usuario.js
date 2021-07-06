@@ -6,6 +6,8 @@ const usuarioSchema = new Schema( {
 
     nome: { type: String, required: true, unique: false},
     login: { type: String, required: true, unique: true},
+    email: { type: String, required: true, unique: false},
+    telefone: { type: String, required: true, unique: false},
     senha: { type: String, required: true},
 
 });
