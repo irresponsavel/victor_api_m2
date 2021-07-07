@@ -65,8 +65,6 @@ router.put('/update/:id', async (req, res) => {
     if (!nome || !login || !email || !telefone)
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
     try {
-        if (await usuarios.findOne({ login }))
-            return res.send({ message: 'Login já cadastrado! '});
         
         const usuario = await usuarios.findByIdAndUpdate(req.params.id, req.body);
         const usuarioChanged = await usuarios.findById(req.params.id);
