@@ -62,7 +62,7 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     const { nome, login, senha, email, telefone} = req.body;
 
-    if (!nome || !login || !senha || !email || !telefone)
+    if (!nome || !login || !email || !telefone)
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
     try {
         if (await usuarios.findOne({ login }))
