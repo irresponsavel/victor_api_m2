@@ -38,8 +38,7 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     const { nome, endereco, estado ,cidade, cnpj } = req.body;
 
-    if (!nome || !endereco || !estado || !cidade || !cnpj) 
-        return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
+
     try {
         if (await lojas.findOne({ cnpj }))
             return res.send({ message: 'Loja já cadastrado! '});
