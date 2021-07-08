@@ -40,9 +40,7 @@ router.put('/update/:id', async (req, res) => {
 
 
     try {
-        if (await lojas.findOne({ cnpj }))
-            return res.send({ message: 'Loja já cadastrado! '});
-        
+       
         const loja = await lojas.findByIdAndUpdate(req.params.id, req.body);
         const lojaChanged = await lojas.findById(req.params.id);
 
