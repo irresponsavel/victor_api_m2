@@ -34,11 +34,10 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     const { nome, preco, categoria, descricao } = req.body;
     
-    if (!nome || !preco || !categoria || !descricao) 
+    if (!preco || !categoria || !descricao) 
         return res.send({ message: 'Verifique se todos os campos obrigatórios foram informados!' });
     try {
-        if (await produtos.findOne({ nome }))
-            return res.send({ message: 'Produto já cadastrado! '});
+
         
         const produto = await produtos.findByIdAndUpdate(req.params.id, req.body);
         const produtoChanged = await produtos.findById(req.params.id);
